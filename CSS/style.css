@@ -1,0 +1,890 @@
+/*/////////////////////////// DEFAULT SETTINGS ///////////////////////////*/
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+
+/*/////////////////////////// STYLING THE WEBSITE ///////////////////////////*/
+
+
+/*/////////////////////////// MENU SETTINGS ///////////////////////////*/
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 30px;
+    /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    font-size: 60px;
+    margin-top: 2%;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+
+/*/////////////////////////// HOME PAGE ///////////////////////////*/
+
+body#homeBody {
+    overflow-y: hidden;
+}
+
+div#backgroundImage {
+    display: flex;
+    width: 100%;
+    z-index: -10;
+}
+
+img#backgroundImagePicture {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+/*//////////// Home Header ////////////*/
+
+header {
+    display: flex;
+    width: 100%;
+}
+
+span#menuIcon {
+    display: flex;
+    width: 100%;
+    margin: 2%;
+    padding: 2%;
+    justify-content: flex-start;
+    color: white;
+    font-size: 20px;
+    z-index: 10;
+}
+
+/*//////////// Home Main ////////////*/
+
+div#myName {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+h1#myNameText {
+    position: absolute;
+    letter-spacing: 12px;
+    font-size: 250%;
+    color: white;
+}
+
+/*/////////////////////////// ABOUT ME PAGE ///////////////////////////*/
+
+/*//////////// About Me Header ////////////*/
+
+span#menuIcon2 {
+    display: flex;
+    width: 100%;
+    margin: 2%;
+    padding: 2%;
+    justify-content: flex-start;
+    color: black;
+    font-size: 20px;
+}
+
+/*//////////// About Me Main ////////////*/
+
+h1#titleAboutMe {
+    letter-spacing: 12px;
+}
+
+h1#titleWorkExperience {
+    letter-spacing: 12px;
+}
+
+h1#titleEducation {
+    letter-spacing: 12px;
+}
+
+h1#titleLanguages {
+    letter-spacing: 12px;
+}
+
+h1#titleDigitalSkills {
+    letter-spacing: 12px;
+}
+
+div#aboutMe {
+    display: grid;
+    grid-template-areas: "titleAbout textAbout";
+    grid-template-columns: 1fr 1fr;
+    margin: 2%;
+    padding: 2%;
+}
+
+div#titleAboutMe {
+    grid-area: titleAbout;
+}
+
+div#textAboutMe {
+    grid-area: textAbout;
+}
+
+div#workExperience {
+    display: grid;
+    grid-template-areas: "titleWork textWork";
+    grid-template-columns: 1fr 1fr;
+    margin: 2%;
+    padding: 2%;
+}
+
+div#titleWorkExperience {
+    grid-area: titleWork;
+}
+
+div#textWorkExperience {
+    grid-area: textWork;
+}
+
+div#education {
+    display: grid;
+    grid-template-areas: "titleEducation textEducation";
+    grid-template-columns: 1fr 1fr;
+    margin: 2%;
+    padding: 2%;
+}
+
+div#titleEducation {
+    grid-area: titleEducation;
+}
+
+div#textEducation {
+    grid-area: textEducation;
+}
+
+div#languages {
+    display: grid;
+    grid-template-areas: "titleLanguages textLanguages";
+    grid-template-columns: 1fr 1fr;
+    margin: 2%;
+    padding: 2%;
+}
+
+div#titleLanguages {
+    grid-area: titleLanguages;
+}
+
+div#textLanguages {
+    grid-area: textLanguages;
+}
+
+div#digitalSkills {
+    display: grid;
+    grid-template-areas: "titleDigitalSkills textDigitalSkills";
+    grid-template-columns: 1fr 1fr;
+    margin: 2%;
+    padding: 2%;
+}
+
+div#titleDigitalSkills {
+    grid-area: titleDigitalSkills;
+}
+
+div#textDigitalSkills {
+    grid-area: textDigitalSkills;
+}
+
+
+/*/////////////////////////// PORTFOLIO PAGE ///////////////////////////*/
+
+/*//////////// Portfolio Header ////////////*/
+
+span#menuIcon2 {
+    display: flex;
+    width: 100%;
+    margin: 2%;
+    padding: 2%;
+    justify-content: flex-start;
+    color: black;
+    font-size: 20px;
+}
+
+/*//////////// Portfolio Main ////////////*/
+
+a#linkone {
+    color: black;
+    text-decoration: underline;
+}
+
+a#linkone:active {
+    color: black;
+}
+a#linktwo{
+    color: black;
+    text-decoration: underline;
+}
+a#linktwo:active{
+    color: black;
+}
+a#linkthree{
+    color: black;
+    text-decoration: underline;
+}
+a#linkthree:active{
+    color: black;
+}
+a#linkfour{
+    color: black;
+    text-decoration: underline;
+}
+a#linkfour:active{
+    color: black;
+}
+a#linkfive{
+    color: black;
+    text-decoration: underline;
+}
+a#linkfive:active{
+    color: black;
+}
+a#linksix{
+    color: black;
+    text-decoration: underline;
+}
+a#linksix:active{
+    color: black;
+}
+a#linkseven{
+    color: black;
+    text-decoration: underline;
+}
+a#linkseven:active{
+    color: black;
+}
+a#linkeight{
+    color: black;
+    text-decoration: underline;
+}
+a#linkeight:active{
+    color: black;
+}
+a#linknine{
+    color: black;
+    text-decoration: underline;
+}
+a#linknine:active{
+    color: black;
+}
+a#linkten{
+    color: black;
+    text-decoration: underline;
+}
+a#linkten:active{
+    color: black;
+}
+
+div#basicWeb {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    padding: 2%;
+    margin: 2%;
+}
+
+div#link1Div {
+    margin: 2%;
+    justify-content: center;
+}
+
+h1#titleBasicWeb {
+    letter-spacing: 12px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+div#textBasicWeb {
+    display: flex;
+    text-align: center;
+    width: 50%;
+}
+
+div#basicAnimation {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    padding: 2%;
+    margin: 2%;
+}
+
+div#link2Div {
+    margin-top: 2%;
+    justify-content: center;
+    text-align: center;
+}
+
+div#link3Div {
+    margin: 1%;
+    justify-content: center;
+    text-align: center;
+}
+
+div#link4Div {
+    margin-bottom: 2%;
+    justify-content: center;
+    text-align: center;
+}
+
+h1#titleBasicAnimation {
+    letter-spacing: 12px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+div#textBasicAnimation {
+    display: flex;
+    text-align: center;
+    width: 50%;
+}
+
+div#basicContent {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    padding: 2%;
+    margin: 2%;
+}
+
+div#link5Div {
+    margin-top: 2%;
+    justify-content: center;
+}
+
+div#link6Div {
+    margin: 1%;
+    justify-content: center;
+}
+
+div#link7Div {
+    margin-bottom: 1%;
+    justify-content: center;
+}
+
+div#link8Div {
+    margin-bottom: 2%;
+    justify-content: center;
+}
+
+h1#titleBasicContent {
+    letter-spacing: 12px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+div#textBasicContent {
+    display: flex;
+    text-align: center;
+    width: 50%;
+}
+
+div#basicUX {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    padding: 2%;
+    margin: 2%;
+}
+
+div#link9Div {
+    margin-top: 2%;
+    justify-content: center;
+}
+
+div#link10Div {
+    margin-top: 1%;
+    margin-bottom: 2%;
+    justify-content: center;
+}
+
+h1#titleBasicUX {
+    letter-spacing: 12px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+div#textBasicUX {
+    display: flex;
+    text-align: center;
+    width: 50%;
+}
+
+
+/*/////////////////////////// CONTACT PAGE ///////////////////////////*/
+
+/*//////////// Contact Header ////////////*/
+
+div#contactInformation {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    padding: 2%;
+    margin-top: 59vh;
+}
+
+h1#titleContact {
+    letter-spacing: 12px;
+    font-size: 250%;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+div#myMail {
+    margin-top: 2%;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+div#myNumber {
+    margin-top: 2%;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/*/////////////////////////// MEDIA QUERIES ///////////////////////////*/
+
+/*//////////// Phones ////////////*/
+
+@media all and (max-width:600px) {
+
+    /*//////////// Home Page ////////////*/
+
+    body#homeBody {
+        background-image: url(Images/_DSC0337.jpg);
+    }
+
+    div#backgroundImage {
+        display: none;
+    }
+
+
+
+    /*//////////// About Me Page////////////*/
+
+    h1 {
+        font-size: 150%;
+    }
+
+    div#aboutMe {
+        display: grid;
+        grid-template-areas:
+            "titleAbout"
+            "textAbout";
+        grid-template-columns: 1fr;
+        margin: 5%;
+        padding: 2%;
+        justify-content: center;
+    }
+
+    div#titleAboutMe {
+        grid-area: titleAbout;
+    }
+
+    div#textAboutMe {
+        grid-area: textAbout;
+    }
+
+    div#workExperience {
+        display: grid;
+        grid-template-areas:
+            "titleWork"
+            "textWork";
+        grid-template-columns: 1fr;
+        margin: 5%;
+        padding: 2%;
+        justify-content: center;
+    }
+
+    div#titleWorkExperience {
+        grid-area: titleWork;
+    }
+
+    div#textWorkExperience {
+        grid-area: textWork;
+    }
+
+    div#education {
+        display: grid;
+        grid-template-areas:
+            "titleEducation"
+            "textEducation";
+        grid-template-columns: 1fr;
+        margin: 5%;
+        padding: 2%;
+        justify-content: center;
+    }
+
+    div#titleEducation {
+        grid-area: titleEducation;
+    }
+
+    div#textEducation {
+        grid-area: textEducation;
+    }
+
+    div#languages {
+        display: grid;
+        grid-template-areas:
+            "titleLanguages"
+            "textLanguages";
+        grid-template-columns: 1fr 1fr;
+        margin: 5%;
+        padding: 2%;
+        justify-content: center;
+    }
+
+    div#titleLanguages {
+        grid-area: titleLanguages;
+    }
+
+    div#textLanguages {
+        grid-area: textLanguages;
+    }
+
+    div#digitalSkills {
+        display: grid;
+        grid-template-areas:
+            "titleDigitalSkills"
+            "textDigitalSkills";
+        grid-template-columns: 1fr;
+        margin: 5%;
+        padding: 2%;
+        justify-content: center;
+    }
+
+    div#titleDigitalSkills {
+        grid-area: titleDigitalSkills;
+        text-align: center;
+    }
+
+    div#textDigitalSkills {
+        grid-area: textDigitalSkills;
+    }
+
+    /*//////////// Contact Page////////////*/
+
+    header#contactHeader {
+        background-image: url(Images/lea-portfolio2.jpg);
+        height: 50vh;
+    }
+
+    div#contactInformation {
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2%;
+        margin-top: 5vh;
+    }
+
+    h1#titleContact {
+        letter-spacing: 12px;
+        font-size: 250%;
+        color: black;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    div#myMail {
+        margin-top: 2%;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    div#myNumber {
+        margin-top: 2%;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+    }
+
+
+
+}
+
+/*//////////// Tablets ////////////*/
+
+@media all and (min-width:600px) and (max-width:800px) {
+
+    /*//////////// Home Page ////////////*/
+
+    body#homeBody {
+        background-image: url(Images/_DSC0337.jpg);
+    }
+
+    div#backgroundImage {
+        display: none;
+    }
+
+    /*//////////// About Me Page////////////*/
+
+    h1 {
+        font-size: 250%;
+    }
+
+    div#aboutMe {
+        display: grid;
+        grid-template-areas:
+            "titleAbout"
+            "textAbout";
+        grid-template-columns: 1fr;
+        margin: 2%;
+        margin-top: 5%;
+        padding: 2%;
+        justify-content: center;
+    }
+
+    div#titleAboutMe {
+        grid-area: titleAbout;
+    }
+
+    div#textAboutMe {
+        grid-area: textAbout;
+    }
+
+    div#workExperience {
+        display: grid;
+        grid-template-areas:
+            "titleWork"
+            "textWork";
+        grid-template-columns: 1fr;
+        margin: 2%;
+        margin-top: 5%;
+        justify-content: center;
+    }
+
+    div#titleWorkExperience {
+        grid-area: titleWork;
+    }
+
+    div#textWorkExperience {
+        grid-area: textWork;
+    }
+
+    div#education {
+        display: grid;
+        grid-template-areas:
+            "titleEducation"
+            "textEducation";
+        grid-template-columns: 1fr;
+        margin: 2%;
+        margin-top: 5%;
+        justify-content: center;
+    }
+
+    div#titleEducation {
+        grid-area: titleEducation;
+    }
+
+    div#textEducation {
+        grid-area: textEducation;
+    }
+
+    div#languages {
+        display: grid;
+        grid-template-areas:
+            "titleLanguages"
+            "textLanguages";
+        grid-template-columns: 1fr 1fr;
+        margin: 2%;
+        margin-top: 5%;
+        justify-content: center;
+    }
+
+    div#titleLanguages {
+        grid-area: titleLanguages;
+    }
+
+    div#textLanguages {
+        grid-area: textLanguages;
+    }
+
+    div#digitalSkills {
+        display: grid;
+        grid-template-areas:
+            "titleDigitalSkills"
+            "textDigitalSkills";
+        grid-template-columns: 1fr;
+        margin: 2%;
+        margin-top: 5%;
+        justify-content: center;
+    }
+
+    div#titleDigitalSkills {
+        grid-area: titleDigitalSkills;
+        text-align: center;
+    }
+
+    div#textDigitalSkills {
+        grid-area: textDigitalSkills;
+    }
+
+    /*//////////// Contact Page////////////*/
+
+    header#contactHeader {
+        background-image: url(Images/lea-portfolio2.jpg);
+        height: 50vh;
+    }
+
+    div#contactInformation {
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2%;
+        margin-top: 5vh;
+    }
+
+    h1#titleContact {
+        letter-spacing: 12px;
+        font-size: 250%;
+        color: black;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    div#myMail {
+        margin-top: 2%;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    div#myNumber {
+        margin-top: 2%;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+    }
+
+
+
+}
